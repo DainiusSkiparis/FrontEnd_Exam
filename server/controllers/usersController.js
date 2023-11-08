@@ -14,14 +14,13 @@ router.get("/", auth, async (_, res) => {
 });
 
 // POST - Sukurti vartotoją
-router.post("/register", auth, async (req, res) => {
+router.post("/create", async (req, res) => {
   try {
-    const { firstname, lastname, email, visit } = req.body;
+    const { name, email, password } = req.body;
     const newUser = new User({
-      firstname,
-      lastname,
+      name,
       email,
-      visit,
+      password,
     });
     await newUser.save();
     res.status(201).json(newUser);
@@ -30,12 +29,13 @@ router.post("/register", auth, async (req, res) => {
   }
 });
 
-// DELETE užklausos apdorojimas
+<<<<<<< Updated upstream
+=======
+// DELETE ištrinti vartotoją
 router.delete("/:id", auth, async (req, res) => {
-  console.log(userId);
   try {
     const userId = req.params.id;
-    const user = await User.findByIdAndRemove(userId);
+    const user = await User.findByIdAndDelete(userId);
     console.log(userId);
 
     if (!user) {
@@ -49,4 +49,6 @@ router.delete("/:id", auth, async (req, res) => {
   }
 });
 
+>>>>>>> Stashed changes
 module.exports = router;
+0;

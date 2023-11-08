@@ -29,4 +29,26 @@ router.post("/create", async (req, res) => {
   }
 });
 
+<<<<<<< Updated upstream
+=======
+// DELETE ištrinti vartotoją
+router.delete("/:id", auth, async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const user = await User.findByIdAndDelete(userId);
+    console.log(userId);
+
+    if (!user) {
+      return res.status(404).json({ error: "Vartotojas nerastas" });
+    }
+
+    res.json({ message: "Vartotojas ištrintas sėkmingai" });
+  } catch (error) {
+    console.error("Ištrynimo klaida:", error);
+    res.status(500).json({ error: "Ištrinant vartotoją įvyko klaida" });
+  }
+});
+
+>>>>>>> Stashed changes
 module.exports = router;
+0;

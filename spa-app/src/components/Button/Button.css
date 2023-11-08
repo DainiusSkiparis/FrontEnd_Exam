@@ -1,0 +1,83 @@
+.button {
+  align-items: center;
+  background-color: #dddddd;
+  border: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #999999;
+  color: #ffffff;
+}
+
+.button:active {
+  background: #666666;
+  color: rgb(255, 255, 255, 0.7);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.blue {
+  background-color: #0000dd;
+}
+
+.blue:hover,
+.blue:focus {
+  background-color: #000099;
+}
+
+.blue:active {
+  background: #000066;
+}
+
+.red {
+  background-color: #dd0000;
+}
+
+.red:hover,
+.red:focus {
+  background-color: #990000;
+}
+
+.red:active {
+  background: #660000;
+}
+
+.green {
+  background-color: #00dd00;
+}
+
+.green:hover,
+.green:focus {
+  background-color: #009900;
+}
+
+.green:active {
+  background: #006600;
+}

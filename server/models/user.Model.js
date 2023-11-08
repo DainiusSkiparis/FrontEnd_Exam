@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 
 const userSchema = mongoose.Schema({
-  name: {
+  firstname: {
+    type: String,
+    required: true,
+  },
+  lastname: {
     type: String,
     required: true,
   },
@@ -9,13 +13,8 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-<<<<<<< Updated upstream
-  password: {
-    type: String,
-=======
   visit: {
-    type: Date,
->>>>>>> Stashed changes
+    type: String,
     required: true,
   },
 });

@@ -13,8 +13,25 @@ router.get("/", auth, async (_, res) => {
   }
 });
 
+// POST - Prisijungimo tikrinimas
+router.post("/signin", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const admin = await Admin.findOne({ email });
+    if (!admin) {
+      return res.status(400).json({ message: "Tokio vartotojo nerasta" });
+    }
+    if (password !== admin.password) {
+      return res.status(401).json({ message: "Neteisingas slaptažodis" });
+    }
+    res.status(200).json({ message: "Prisijungimas sėkmingas" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // POST - Sukurti adminą
-router.post("/create", async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
     const { firstname, lastname, email, password } = req.body;
     const newAdmin = new Admin({
